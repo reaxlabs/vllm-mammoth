@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-mammoth"
+version = "0.1.0"
+description = "vLLM plugin: serve baselabs/mammoth-1 on /v1/systemone with its block-bidirectional mask and qev prompt/readout"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = []  # runs inside an existing vLLM 0.32.x install
+
+[project.entry-points."vllm.general_plugins"]
+mammoth = "vllm_mammoth:register"
+
+[tool.setuptools]
+packages = ["vllm_mammoth"]
